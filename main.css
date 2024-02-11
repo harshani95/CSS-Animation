@@ -2,26 +2,33 @@
     margin: 0;
     padding: 0;
 }
+
 .top-outer{
     width: 100%;
     height: 50vh;
     background-color: rgba(52, 152, 219,0.2);
+    position: relative;
+    overflow: hidden;
 }
+
 .road-top{
     width: 100%;
     height: 40vh;
     background-color: rgba(44, 62, 80,1.0);
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
 }
 
 .road-bottom{
      width: 100%;
      height: 10vh;
      background-color: rgba(255, 159, 67,0.5);
-     position: relative;
-     animation: leftToRight 10s infinite linear;
  }
 
+/*===========================*/
 .car-wrapper {
     width: 200px;
     position: absolute;
@@ -33,6 +40,7 @@
 .car {
     width: 100%;
 }
+
 .wheel{
     width: 35px;
     height: 35px;
@@ -43,13 +51,77 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
+
 .wheel-1{
     left: 25px;
 }
+
 .wheel-2{
     right: 32px;
 }
+
+.m1 {
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+}
+
+.m2 {
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.cloud-1 {
+    width: 150px;
+    position: absolute;
+    right: -150px;
+    animation: cloud 40s linear infinite;
+}
+
+.cloud-2 {
+    width: 150px;
+    position: absolute;
+    right: -150px;
+    top: 150px;
+    animation: cloud 50s linear infinite;
+}
+
+.bird{
+    width: 100px;
+    position: absolute;
+    top: 50px;
+    left: -150px;
+    animation: bird 15s linear infinite;
+}
+
+.line {
+    width: 100%;
+    border: 5px dashed white;
+}
+
 /*===========================*/
+
+@keyframes cloud {
+    from {
+        right: -150px;
+    }
+    to {
+        right: 1600px;
+    }
+}
+
+@keyframes bird {
+    from {
+        left: -150px;
+    }
+    to {
+        left: 1600px;
+    }
+}
+
 @keyframes forwardWheel {
     from {
         transform: rotate(0);
